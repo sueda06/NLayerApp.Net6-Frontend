@@ -5,7 +5,7 @@ import Category from './pages/Category.js';
 import Login from './pages/Login.js';
 import Home from './pages/Home.js'; 
 import Register from './pages/Register.js';
-import {BrowserRouter, Route, Switch,NavLink} from 'react-router-dom';
+import {BrowserRouter, Route, Switch,NavLink, Routes} from 'react-router-dom';
 import NavbarMenu from './components/NavbarMenu';
 
 function App() {
@@ -16,13 +16,13 @@ function App() {
         React JS Frontend
       </h3>
       <NavbarMenu/>
-      <Switch>
-        <Route path='/pages/Home' component={Home}/>
-        <Route path='/pages/Product' component={Product}/>
-        <Route path='/pages/Category' component={Category}/>
-        <Route path='/pages/Login' component={Login}/>
-        <Route path='/pages/Register' component={Register}/>
-      </Switch>
+      <Routes>
+        <Route path='/pages/Home' element={<Home/>}/>
+        <Route path='/pages/Product' element={<Product/>}/>
+        <Route path='/pages/Category' element={<Category/>}/>
+        <Route path='/pages/Login' element={<Login/>}/>
+        <Route path='/pages/Register' element={<Register/>}/>
+      </Routes>
     </div>
     </BrowserRouter>
   );

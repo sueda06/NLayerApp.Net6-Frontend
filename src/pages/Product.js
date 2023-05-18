@@ -66,9 +66,10 @@ function Product() {
             categoryId: CategoryId
           }, { headers: { "Authorization": window.localStorage.getItem("token") } })
             .then((result) => {
+                setTimeout(() => {
               toast.success('Success', {
                 position: toast.POSITION.TOP_RIGHT
-              });
+              });}, 1000);
               refreshList();
             })
             .catch(error => {
@@ -140,11 +141,15 @@ return(
         <th>
             CategoryId
         </th>
+        <th>
+            Edit
+        </th>
     </tr>
     </thead>
     <tbody>
         {products.map(emp=>
             <tr key={emp.id}>
+                 <td>{emp.id}</td>
                 <td>{emp.name}</td>
                 <td>{emp.stock}</td>
                 <td>{emp.price}</td>
@@ -239,7 +244,7 @@ return(
 </div> 
 </div>
 
-<ToastContainer />
+<ToastContainer  autoClose={1000}/>
 </div>
         )
     }

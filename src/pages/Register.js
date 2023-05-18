@@ -3,7 +3,7 @@ import {variables} from './Variables.js';
 import axios from 'axios'; 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {NavLink} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 function Register() {
     const [firstName, setFirstName] = useState('');
@@ -11,6 +11,7 @@ function Register() {
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const changeFirstName =(e)=>{
         setFirstName(e.target.value);
@@ -82,12 +83,10 @@ function Register() {
         onClick={()=>registerClick()}
         >Register
         </button>
-         <NavLink className="btn btn-light btn-outline-primary" to="/pages/Login">
-        Login
-      </NavLink>
+        <button type="button"   className="btn btn-primary float-start" onClick={()=>navigate("/pages/Login")}>Login</button>
      </div>
     </div> 
-    <ToastContainer />
+    <ToastContainer  autoClose={1000}/>
 </div>
 
     )
