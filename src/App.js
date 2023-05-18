@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import {Product} from './pages/Product';
-import {Category} from './pages/Category';
-import {Home} from './pages/Home'; 
+import Product from './pages/Product.js';
+import Category from './pages/Category.js';
+import Login from './pages/Login.js';
+import Home from './pages/Home.js'; 
+import Register from './pages/Register.js';
 import {BrowserRouter, Route, Switch,NavLink} from 'react-router-dom';
+import NavbarMenu from './components/NavbarMenu';
 
 function App() {
   return (
@@ -12,36 +15,13 @@ function App() {
       <h3 className="d-flex justify-content-center m-3">
         React JS Frontend
       </h3>
-        
-      <nav className="navbar navbar-expand-sm bg-light navbar-dark">
-        <ul className="navbar-nav">
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-light btn-outline-primary" to="/pages/Home">
-              Home
-            </NavLink>
-          </li>
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-light btn-outline-primary" to="/pages/Product">
-              Product
-            </NavLink>
-          </li>
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-light btn-outline-primary" to="/pages/Category">
-              Category
-            </NavLink>
-          </li>
-          <li className="nav-item- m-1">
-            <NavLink className="btn btn-light btn-outline-primary" to="/pages/Login">
-              Login
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-
+      <NavbarMenu/>
       <Switch>
         <Route path='/pages/Home' component={Home}/>
         <Route path='/pages/Product' component={Product}/>
         <Route path='/pages/Category' component={Category}/>
+        <Route path='/pages/Login' component={Login}/>
+        <Route path='/pages/Register' component={Register}/>
       </Switch>
     </div>
     </BrowserRouter>
