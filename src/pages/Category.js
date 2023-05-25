@@ -55,10 +55,16 @@ setId(e.target.value)
             <td>{id}</td>
             <td>{name}</td>
            <td> 
+           <table className="table table-striped">
+           <thead>
+            <tr>
             <th>id</th>
             <th>name</th>
             <th>stok</th>
             <th>price</th>
+            </tr>
+            </thead>
+            <tbody>
             {products.map(emp=>
             <tr key={emp.id}>
                 <td>{emp.id}</td>
@@ -67,6 +73,8 @@ setId(e.target.value)
                 <td>{emp.price}</td>
             </tr>
             )}
+            </tbody>
+            </table>
             </td>
         </tr>
         

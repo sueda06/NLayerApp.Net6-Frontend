@@ -26,6 +26,7 @@ function Login(){
         toast.success('Success', {
             position: toast.POSITION.TOP_RIGHT
         });
+        navigate("/pages/Admin")
     })
     }
   

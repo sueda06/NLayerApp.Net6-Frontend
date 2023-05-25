@@ -3,6 +3,7 @@ import './App.css';
 import Product from './pages/Product.js';
 import Category from './pages/Category.js';
 import Login from './pages/Login.js';
+import Admin from './pages/Admin.js';
 import Home from './pages/Home.js'; 
 import Register from './pages/Register.js';
 import {BrowserRouter, Route, Switch,NavLink, Routes} from 'react-router-dom';
@@ -21,6 +22,7 @@ function App() {
         <Route path='/pages/Product' element={<Product/>}/>
         <Route path='/pages/Category' element={<Category/>}/>
         <Route path='/pages/Login' element={<Login/>}/>
+        <Route path='/pages/Admin' element={<Admin/>}/>
         <Route path='/pages/Register' element={<Register/>}/>
       </Routes>
     </div>

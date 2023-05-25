@@ -19,7 +19,7 @@ function NavbarMenu() {
             <Nav.Link href="/pages/Category">Categories</Nav.Link>
             {
              !token ?  (<Nav.Link href="/pages/Login">Login</Nav.Link>)   
-                    :  (<Nav.Link href="/pages/Product">Admin</Nav.Link>)
+                    :  (<Nav.Link href="/pages/Admin">Admin</Nav.Link>)
             }
           </Nav>
         </Container>
